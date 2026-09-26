@@ -70,7 +70,7 @@
       label: "Who",
       keys: ["who", "about", "jason", "company", "where", "location", "alabaster"],
       answer:
-        "Jason Martin Consulting is a practitioner-led IT and security practice. The work is fractional vCISO and vCIO leadership plus hands-on infrastructure and cybersecurity. The public site is jascmartin.com. Client work is delivered through the Work portal.",
+        "Jason Martin has 25 years in technology, infrastructure, and security, and holds 30+ industry certifications. Jason Martin Consulting is his practice for fractional vCISO and vCIO work, plus infrastructure, cybersecurity, and web development. The public site is jascmartin.com. Client work is delivered through the Work portal.",
     },
   ];
 
