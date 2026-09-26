@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Jason Martin Consulting</title>
+  <meta name="description" content="Contact Jason Martin Consulting for vCISO, vCIO, IT infrastructure and security consulting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { 950: '#05080f', 900: '#0a0f1c', 800: '#111827', 700: '#1a2332', 600: '#243044' },
+            accent: { cyan: '#00d4ff', teal: '#14b8a6', green: '#10b981' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-dark-950/80 backdrop-blur-md border-b border-dark-700/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-teal flex items-center justify-center font-mono font-bold text-dark-950 text-sm">JM</div>
+          <span class="font-semibold text-lg tracking-tight">Jason Martin <span class="text-accent-cyan">Consulting</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="https://work.jascmartin.com/portal" class="nav-link">Support Portal</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link active">Contact</a>
+          <a href="https://work.jascmartin.com/portal" class="btn-primary text-sm px-4 py-2">Client Login</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-dark-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-dark-700/50 bg-dark-900">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block py-2 hover:text-accent-cyan">Home</a>
+        <a href="services.html" class="block py-2 hover:text-accent-cyan">Services</a>
+        <a href="https://work.jascmartin.com/portal" class="block py-2 hover:text-accent-cyan">Support Portal</a>
+        <a href="about.html" class="block py-2 hover:text-accent-cyan">About</a>
+        <a href="contact.html" class="block py-2 text-accent-cyan">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-24 pb-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl sm:text-5xl font-bold mb-4">Contact</h1>
+      <p class="text-xl text-gray-400 mb-10">Tell us about your goals. We’ll respond promptly and can schedule a discovery call.</p>
+
+      <div class="portal-card mb-10">
+        <form id="contact-form" class="space-y-5">
+          <div class="grid sm:grid-cols-2 gap-5">
+            <div>
+              <label class="form-label" for="name">Name</label>
+              <input type="text" id="name" name="name" class="form-input" required />
+            </div>
+            <div>
+              <label class="form-label" for="email">Email</label>
+              <input type="email" id="email" name="email" class="form-input" required />
+            </div>
+          </div>
+          <div>
+            <label class="form-label" for="company">Company</label>
+            <input type="text" id="company" name="company" class="form-input" />
+          </div>
+          <div>
+            <label class="form-label" for="interest">I’m interested in</label>
+            <select id="interest" name="interest" class="form-input">
+              <option value="vCISO">vCISO services</option>
+              <option value="vCIO">vCIO services</option>
+              <option value="Infrastructure">IT Infrastructure</option>
+              <option value="Security">Cybersecurity</option>
+              <option value="General">General inquiry</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" for="message">Message</label>
+            <textarea id="message" name="message" rows="5" class="form-input" required placeholder="Briefly describe your situation or what you’d like to discuss..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary px-6 py-3">Send Message</button>
+          <p id="form-success" class="hidden text-accent-green text-sm">Thank you. Your message has been received. We’ll be in touch soon.</p>
+        </form>
+      </div>
+
+      <div class="text-center text-gray-400 text-sm">
+        <p>Or email directly: <a href="mailto:hello@jascmartin.com" class="text-accent-cyan hover:underline">hello@jascmartin.com</a></p>
+        <p class="mt-2">Existing clients: use the <a href="https://work.jascmartin.com/portal" class="text-accent-cyan hover:underline">Support Portal</a> for requests.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-dark-800 bg-dark-900/50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+        <p>© 2026 Jason Martin Consulting · jascmartin.com</p>
+        <div class="flex gap-6">
+          <a href="https://work.jascmartin.com/portal" class="hover:text-accent-cyan">Support Portal</a>
+          <a href="services.html" class="hover:text-accent-cyan">Services</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/chat.js"></script>
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // In production, send to your backend or form service (Formspree, Netlify Forms, Work, etc.)
+      document.getElementById('form-success').classList.remove('hidden');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
