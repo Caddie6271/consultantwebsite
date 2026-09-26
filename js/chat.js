@@ -8,7 +8,7 @@
       label: "Services",
       keys: ["service", "offer", "what do you", "what you do", "help with", "consult"],
       answer:
-        "Jason Martin Consulting offers four lines of work:\n\n• Virtual CISO (vCISO) — security leadership, risk, policy, and compliance readiness\n• Virtual CIO (vCIO) — IT strategy, roadmaps, budget, and vendor oversight\n• IT infrastructure — architecture, cloud, identity, and operations\n• Cybersecurity — assessments, control design, and practical risk reduction\n\nEngagements are fractional: executive-level guidance without a full-time hire. Details are on the Services page.",
+        "Jason Martin Consulting offers five lines of work:\n\n• Virtual CISO (vCISO) — security leadership, risk, policy, and compliance readiness\n• Virtual CIO (vCIO) — IT strategy, roadmaps, budget, and vendor oversight\n• IT infrastructure — architecture, cloud, identity, and operations\n• Cybersecurity — assessments, control design, and practical risk reduction\n• Web development — marketing sites, client portals, and internal web apps\n\nEngagements are scoped to what you need. Details are on the Services page.",
     },
     {
       id: "vciso",
@@ -25,11 +25,18 @@
         "A vCIO is a fractional Chief Information Officer. The work covers IT strategy, multi-year roadmaps, technology budget, vendor selection, project priority, and cloud or infrastructure planning. The goal is to line technology spend up with business outcomes.",
     },
     {
+      id: "web",
+      label: "Web development",
+      keys: ["website", "web dev", "web development", "web app", "frontend", "marketing site"],
+      answer:
+        "Web development covers marketing sites, client portals, dashboards, and internal web tools. That includes layout for phone and desktop, forms, hosting, and a handoff your team can maintain. It is scoped per project. Use the Contact page and choose Web development.",
+    },
+    {
       id: "pricing",
       label: "Pricing",
       keys: ["price", "pricing", "cost", "rate", "fee", "how much", "quote", "retainer", "hourly"],
       answer:
-        "There is no public price list. vCISO, vCIO, infrastructure, and security work are scoped to the size of the organization and what you need done. The next step is a no-obligation discovery call — use the Contact page and say which service you are considering. Existing clients manage requests in the support portal, not through this chat.",
+        "There is no public price list. vCISO, vCIO, infrastructure, security, and web development are scoped to the size of the work. The next step is a no-obligation discovery call — use the Contact page and say which service you are considering. Existing clients manage requests in the support portal, not through this chat.",
     },
     {
       id: "support",
