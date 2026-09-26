@@ -303,21 +303,28 @@ select.form-input {
   .jmc-launch { right: 0.8rem; bottom: 0.8rem; }
 }
 
-/* Homepage hero rotator */
-.hero-slides { position: relative; min-height: 22rem; }
-.hero-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity 0.55s ease, transform 0.55s ease;
-  pointer-events: none;
+/* Homepage hero scroller */
+.hero-scroller {
+  display: flex;
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
 }
-.hero-slide.is-active {
-  opacity: 1;
-  transform: none;
-  pointer-events: auto;
-  position: relative;
+.hero-scroller::-webkit-scrollbar { display: none; }
+.hero-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 20rem;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
 }
 .hero-dots { display: flex; gap: 0.5rem; margin-top: 1.75rem; justify-content: center; }
 .hero-dot {
@@ -330,6 +337,3 @@ select.form-input {
   padding: 0;
 }
 .hero-dot.is-active { background: #00d4ff; }
-@media (max-width: 640px) {
-  .hero-slides { min-height: 26rem; }
-}

@@ -1,26 +1,30 @@
 // Jason Martin Consulting - Main JS + Work Integration
 
 document.addEventListener('DOMContentLoaded', () => {
+  const scroller = document.querySelector('.hero-scroller');
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.hero-dot');
-  if (slides.length) {
-    let i = 0;
+  if (scroller && slides.length) {
     let timer;
-    const show = (n) => {
-      i = (n + slides.length) % slides.length;
-      slides.forEach((s, idx) => s.classList.toggle('is-active', idx === i));
+    const index = () => Math.round(scroller.scrollLeft / scroller.clientWidth);
+    const go = (n) => {
+      const i = (n + slides.length) % slides.length;
+      scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
+    };
+    const mark = () => {
+      const i = index();
       dots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
     };
     const start = () => {
       clearInterval(timer);
-      timer = setInterval(() => show(i + 1), 6500);
+      timer = setInterval(() => go(index() + 1), 6500);
     };
-    dots.forEach((d, idx) => d.addEventListener('click', () => { show(idx); start(); }));
-    const hero = document.getElementById('hero');
-    if (hero) {
-      hero.addEventListener('mouseenter', () => clearInterval(timer));
-      hero.addEventListener('mouseleave', start);
-    }
+    dots.forEach((d, idx) => d.addEventListener('click', () => { go(idx); start(); }));
+    scroller.addEventListener('scroll', mark, { passive: true });
+    scroller.addEventListener('mouseenter', () => clearInterval(timer));
+    scroller.addEventListener('mouseleave', start);
+    scroller.addEventListener('touchstart', () => clearInterval(timer), { passive: true });
+    scroller.addEventListener('touchend', start);
     start();
   }
 
