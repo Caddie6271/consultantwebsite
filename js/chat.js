@@ -143,47 +143,57 @@
   }
 
   function mount() {
-    const root = el("div", "jmc-chat");
-    const panel = el("div", "jmc-chat-panel");
-    panel.hidden = true;
+    const overlay = el("div", "jmc-overlay");
+    overlay.hidden = true;
+    const dialog = el("div", "jmc-dialog");
+    dialog.setAttribute("role", "dialog");
+    dialog.setAttribute("aria-label", "Ask Jason Martin Consulting");
 
-    const head = el("div", "jmc-chat-head");
-    head.appendChild(el("div", "jmc-chat-title", "Support"));
-    const close = el("button", "jmc-chat-close", "Close");
+    const head = el("div", "jmc-dialog-head");
+    const brand = el("div", "jmc-brand");
+    brand.appendChild(el("div", "jmc-mark", "JM"));
+    const titles = el("div");
+    titles.appendChild(el("h2", "", "Ask a question"));
+    titles.appendChild(el("p", "", "Services, pricing, and how to get support"));
+    brand.appendChild(titles);
+    const close = el("button", "jmc-x", "×");
     close.type = "button";
+    close.setAttribute("aria-label", "Close");
+    head.appendChild(brand);
     head.appendChild(close);
 
-    const log = el("div", "jmc-chat-log");
-    const chips = el("div", "jmc-chat-chips");
-    ["Services", "Pricing", "Get support"].forEach((label) => {
+    const log = el("div", "jmc-log");
+    const prompts = el("div", "jmc-prompts");
+    ["What services do you offer?", "How does pricing work?", "How do clients get support?"].forEach((label) => {
       const b = el("button", "jmc-chip", label);
       b.type = "button";
       b.addEventListener("click", () => ask(label));
-      chips.appendChild(b);
+      prompts.appendChild(b);
     });
 
-    const form = el("form", "jmc-chat-form");
+    const form = el("form", "jmc-composer");
     const input = document.createElement("input");
     input.type = "text";
-    input.placeholder = "Ask about services, pricing, or support";
+    input.placeholder = "Type a question";
     input.setAttribute("aria-label", "Question");
     input.maxLength = 240;
-    const send = el("button", "jmc-chat-send", "Send");
+    const send = el("button", "", "Send");
     send.type = "submit";
     form.appendChild(input);
     form.appendChild(send);
 
-    panel.appendChild(head);
-    panel.appendChild(log);
-    panel.appendChild(chips);
-    panel.appendChild(form);
+    dialog.appendChild(head);
+    dialog.appendChild(log);
+    dialog.appendChild(prompts);
+    dialog.appendChild(form);
+    overlay.appendChild(dialog);
 
-    const toggle = el("button", "jmc-chat-toggle", "Ask a question");
+    const toggle = el("button", "jmc-launch", "Chat");
     toggle.type = "button";
+    toggle.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h8M8 14h5M6 18l-2 3V6a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H6z"/></svg> Chat';
 
-    root.appendChild(panel);
-    root.appendChild(toggle);
-    document.body.appendChild(root);
+    document.body.appendChild(overlay);
+    document.body.appendChild(toggle);
 
     function ask(text) {
       const q = text.trim();
@@ -191,28 +201,26 @@
       addMessage(log, "user", q);
       addMessage(log, "bot", reply(q));
       input.value = "";
-    }
-
-    function open() {
-      panel.hidden = false;
-      toggle.setAttribute("aria-expanded", "true");
-      if (!log.childElementCount) {
-        addMessage(
-          log,
-          "bot",
-          "Ask about services, pricing, or how to get support. I don’t have access to client accounts."
-        );
-      }
       input.focus();
     }
 
-    toggle.addEventListener("click", () => {
-      if (panel.hidden) open();
-      else panel.hidden = true;
-    });
-    close.addEventListener("click", () => {
-      panel.hidden = true;
-    });
+    function open() {
+      overlay.hidden = false;
+      document.body.style.overflow = "hidden";
+      if (!log.childElementCount) {
+        addMessage(log, "bot", "I can answer questions about services, pricing, and how to get support. I can’t see client accounts or open a ticket.");
+      }
+      input.focus();
+    }
+    function shut() {
+      overlay.hidden = true;
+      document.body.style.overflow = "";
+    }
+
+    toggle.addEventListener("click", open);
+    close.addEventListener("click", shut);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) shut(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !overlay.hidden) shut(); });
     form.addEventListener("submit", (e) => {
       e.preventDefault();
       ask(input.value);
