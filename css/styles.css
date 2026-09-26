@@ -304,10 +304,24 @@ select.form-input {
 }
 
 /* Homepage hero scroller */
+.hero-screen {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding-top: 4rem;
+  overflow: hidden;
+  width: 100%;
+}
 .hero-scroller {
   display: flex;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
+  overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
@@ -316,16 +330,21 @@ select.form-input {
 .hero-scroller::-webkit-scrollbar { display: none; }
 .hero-slide {
   flex: 0 0 100%;
-  scroll-snap-align: center;
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 20rem;
-  padding: 0 1.5rem;
   box-sizing: border-box;
+  padding: 2rem 1.5rem;
 }
+.hero-slide h1,
+.hero-slide p { max-width: 46rem; }
 .hero-dots { display: flex; gap: 0.5rem; margin-top: 1.75rem; justify-content: center; }
 .hero-dot {
   width: 2.25rem;
