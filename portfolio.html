@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio | Jason Martin Consulting</title>
+  <meta name="description" content="Selected vCISO, vCIO, infrastructure, and cybersecurity engagements from Jason Martin Consulting." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            dark: { 950: '#05080f', 900: '#0a0f1c', 800: '#111827', 700: '#1a2332', 600: '#243044' },
+            accent: { cyan: '#00d4ff', teal: '#14b8a6', green: '#10b981' }
+          },
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-dark-950/80 backdrop-blur-md border-b border-dark-700/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-accent-cyan to-accent-teal flex items-center justify-center font-mono font-bold text-dark-950 text-sm">JM</div>
+          <span class="font-semibold text-lg tracking-tight">Jason Martin <span class="text-accent-cyan">Consulting</span></span>
+        </a>
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="services.html" class="nav-link">Services</a>
+          <a href="portfolio.html" class="nav-link active">Portfolio</a>
+          <a href="https://store.jascmartin.com" class="nav-link">Store</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+          <a href="https://work.jascmartin.com/portal" class="btn-primary text-sm px-4 py-2">Client Login</a>
+        </div>
+        <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-dark-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-dark-700/50 bg-dark-900">
+      <div class="px-4 py-4 space-y-3">
+        <a href="index.html" class="block py-2 hover:text-accent-cyan">Home</a>
+        <a href="services.html" class="block py-2 hover:text-accent-cyan">Services</a>
+        <a href="portfolio.html" class="block py-2 text-accent-cyan">Portfolio</a>
+        <a href="https://store.jascmartin.com" class="block py-2 hover:text-accent-cyan">Store</a>
+        <a href="about.html" class="block py-2 hover:text-accent-cyan">About</a>
+        <a href="contact.html" class="block py-2 hover:text-accent-cyan">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-24 pb-20">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-14">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4">Portfolio</h1>
+        <p class="text-xl text-gray-400">Selected engagements. Names and identifying details are left out on purpose. These describe the kind of work, not a public client list.</p>
+      </div>
+
+      <article id="security-program" class="portal-card mb-8 scroll-mt-24">
+        <p class="text-accent-cyan font-mono text-sm mb-2">vCISO · Security leadership</p>
+        <h2 class="text-2xl font-bold mb-3">Built a security program where none existed</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">A growing organization needed board-level security leadership without hiring a full-time CISO. The engagement produced a risk-based roadmap, a first set of policies, vendor review, and a plain-language report leadership could actually use.</p>
+        <ul class="text-sm text-gray-400 space-y-2">
+          <li>Security strategy and a sequenced roadmap</li>
+          <li>Policy and standards starter set</li>
+          <li>Readiness work toward a future audit, not a claim of certification</li>
+        </ul>
+      </article>
+
+      <article id="it-roadmap" class="portal-card mb-8 scroll-mt-24">
+        <p class="text-accent-cyan font-mono text-sm mb-2">vCIO · IT strategy</p>
+        <h2 class="text-2xl font-bold mb-3">Turned a project list into an IT roadmap</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">Leadership had vendors, tools, and projects, but no single plan. The work was a multi-year roadmap, a clearer technology budget, and fewer overlapping contracts.</p>
+        <ul class="text-sm text-gray-400 space-y-2">
+          <li>Prioritized roadmap tied to business goals</li>
+          <li>Budget and vendor review</li>
+          <li>Reporting leadership could follow month to month</li>
+        </ul>
+      </article>
+
+      <article id="infrastructure" class="portal-card mb-8 scroll-mt-24">
+        <p class="text-accent-cyan font-mono text-sm mb-2">Infrastructure · Cloud and identity</p>
+        <h2 class="text-2xl font-bold mb-3">Mapped the path off fragile infrastructure</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">An assessment of hybrid cloud, network, and identity, followed by a modernization plan the internal team could execute. The deliverable was the design and the sequence, not a rip-and-replace.</p>
+        <ul class="text-sm text-gray-400 space-y-2">
+          <li>Current-state assessment</li>
+          <li>Target architecture for cloud and access</li>
+          <li>Resilience and documentation gaps called out in priority order</li>
+        </ul>
+      </article>
+
+      <article id="assessment" class="portal-card mb-12 scroll-mt-24">
+        <p class="text-accent-cyan font-mono text-sm mb-2">Cybersecurity · Assessment</p>
+        <h2 class="text-2xl font-bold mb-3">Gave a security assessment a sequence</h2>
+        <p class="text-gray-300 leading-relaxed mb-4">Findings were already known. What was missing was which ones mattered. The engagement ranked gaps, sketched the control changes, and left the team with a remediation order instead of a long undifferentiated list.</p>
+        <ul class="text-sm text-gray-400 space-y-2">
+          <li>Gap analysis against practical controls</li>
+          <li>Identity and endpoint priorities</li>
+          <li>A remediation sequence the operators could run</li>
+        </ul>
+      </article>
+
+      <div class="text-center">
+        <a href="contact.html" class="btn-primary px-8 py-3">Discuss a similar engagement</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="border-t border-dark-800 bg-dark-900/50 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm text-gray-500 flex flex-col sm:flex-row justify-between gap-4">
+      <p>© 2026 Jason Martin Consulting · jascmartin.com</p>
+      <a href="contact.html" class="hover:text-accent-cyan">Contact</a>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/chat.js"></script>
+</body>
+</html>
