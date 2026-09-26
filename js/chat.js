@@ -8,7 +8,7 @@
       label: "Services",
       keys: ["service", "offer", "what do you", "what you do", "help with", "consult"],
       answer:
-        "Jason Martin Consulting offers five lines of work:\n\n• Virtual CISO (vCISO) — security leadership, risk, policy, and compliance readiness\n• Virtual CIO (vCIO) — IT strategy, roadmaps, budget, and vendor oversight\n• IT infrastructure — architecture, cloud, identity, and operations\n• Cybersecurity — assessments, control design, and practical risk reduction\n• Web development — marketing sites, client portals, and internal web apps\n\nEngagements are scoped to what you need. Details are on the Services page.",
+        "Jason Martin Consulting offers six lines of work:\n\n• Virtual CISO (vCISO) — security leadership, risk, policy, and compliance readiness\n• Virtual CIO (vCIO) — IT strategy, roadmaps, budget, and vendor oversight\n• IT infrastructure — architecture, cloud, identity, and operations\n• Cybersecurity — assessments, control design, and practical risk reduction\n• Web development — marketing sites, client portals, and internal web apps\n• AI design and training — practical workflows and hands-on training for your team\n\nEngagements are scoped to what you need. Details are on the Services page.",
     },
     {
       id: "vciso",
@@ -30,6 +30,13 @@
       keys: ["website", "web dev", "web development", "web app", "frontend", "marketing site"],
       answer:
         "Web development covers marketing sites, client portals, dashboards, and internal web tools. That includes layout for phone and desktop, forms, hosting, and a handoff your team can maintain. It is scoped per project. Use the Contact page and choose Web development.",
+    },
+    {
+      id: "ai",
+      label: "AI design and training",
+      keys: ["ai ", "artificial", "chatgpt", "training", "machine learning", "llm", "copilot"],
+      answer:
+        "AI design and training means picking the work AI should actually do, designing the workflow, and teaching your team to run it. That includes guardrails for customer and company data, and a short playbook they keep. It is not a generic tool demo. Use the Contact page and choose AI design and training.",
     },
     {
       id: "pricing",
