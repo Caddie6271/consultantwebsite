@@ -1,30 +1,43 @@
 // Jason Martin Consulting - Main JS + Work Integration
 
 document.addEventListener('DOMContentLoaded', () => {
-  const scroller = document.querySelector('.hero-scroller');
+  const viewport = document.getElementById('hero-viewport');
+  const track = document.getElementById('hero-track');
   const slides = document.querySelectorAll('.hero-slide');
   const dots = document.querySelectorAll('.hero-dot');
-  if (scroller && slides.length) {
+  if (viewport && track && slides.length) {
+    let i = 0;
     let timer;
-    const index = () => Math.round(scroller.scrollLeft / scroller.clientWidth);
-    const go = (n) => {
-      const i = (n + slides.length) % slides.length;
-      scroller.scrollTo({ left: i * scroller.clientWidth, behavior: 'smooth' });
+    let startX = 0;
+    const layout = () => {
+      const w = viewport.clientWidth;
+      slides.forEach((s) => { s.style.width = w + 'px'; });
+      track.style.transform = 'translateX(' + (-i * w) + 'px)';
     };
-    const mark = () => {
-      const i = index();
+    const go = (n) => {
+      i = (n + slides.length) % slides.length;
+      layout();
       dots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
     };
     const start = () => {
       clearInterval(timer);
-      timer = setInterval(() => go(index() + 1), 6500);
+      timer = setInterval(() => go(i + 1), 6500);
     };
     dots.forEach((d, idx) => d.addEventListener('click', () => { go(idx); start(); }));
-    scroller.addEventListener('scroll', mark, { passive: true });
-    scroller.addEventListener('mouseenter', () => clearInterval(timer));
-    scroller.addEventListener('mouseleave', start);
-    scroller.addEventListener('touchstart', () => clearInterval(timer), { passive: true });
-    scroller.addEventListener('touchend', start);
+    viewport.addEventListener('mouseenter', () => clearInterval(timer));
+    viewport.addEventListener('mouseleave', start);
+    viewport.addEventListener('touchstart', (e) => {
+      clearInterval(timer);
+      startX = e.changedTouches[0].clientX;
+    }, { passive: true });
+    viewport.addEventListener('touchend', (e) => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (dx < -40) go(i + 1);
+      else if (dx > 40) go(i - 1);
+      start();
+    });
+    window.addEventListener('resize', layout);
+    go(0);
     start();
   }
 

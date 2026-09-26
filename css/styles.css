@@ -303,7 +303,7 @@ select.form-input {
   .jmc-launch { right: 0.8rem; bottom: 0.8rem; }
 }
 
-/* Homepage hero scroller */
+/* Homepage hero: one centered slide, moves sideways */
 .hero-screen {
   position: relative;
   min-height: 100vh;
@@ -315,36 +315,28 @@ select.form-input {
   overflow: hidden;
   width: 100%;
 }
-.hero-scroller {
-  display: flex;
+.hero-viewport {
   width: 100%;
-  max-width: 100%;
-  min-width: 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  overflow: hidden;
 }
-.hero-scroller::-webkit-scrollbar { display: none; }
+.hero-track {
+  display: flex;
+  flex-wrap: nowrap;
+  transition: transform 0.55s ease;
+  will-change: transform;
+}
 .hero-slide {
-  flex: 0 0 100%;
-  width: 100%;
-  max-width: 100%;
-  min-width: 100%;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
+  flex: 0 0 auto;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  box-sizing: border-box;
   padding: 2rem 1.5rem;
 }
 .hero-slide h1,
-.hero-slide p { max-width: 46rem; }
+.hero-slide p { max-width: 46rem; margin-left: auto; margin-right: auto; }
 .hero-dots { display: flex; gap: 0.5rem; margin-top: 1.75rem; justify-content: center; }
 .hero-dot {
   width: 2.25rem;
