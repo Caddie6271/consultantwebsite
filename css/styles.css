@@ -319,7 +319,7 @@ select.form-input {
   pointer-events: auto;
   position: relative;
 }
-.hero-dots { display: flex; gap: 0.5rem; margin-top: 1.75rem; }
+.hero-dots { display: flex; gap: 0.5rem; margin-top: 1.75rem; justify-content: center; }
 .hero-dot {
   width: 2.25rem;
   height: 0.3rem;
