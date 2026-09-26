@@ -365,3 +365,24 @@ select.form-input {
   padding: 0;
 }
 .hero-dot.is-active { background: #00d4ff; }
+
+.social-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+.social-row a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  border-radius: 9999px;
+  border: 1px solid #243044;
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.social-row a:hover { border-color: #00d4ff; color: #00d4ff; }
