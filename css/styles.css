@@ -302,3 +302,34 @@ select.form-input {
 @media (max-width: 640px) {
   .jmc-launch { right: 0.8rem; bottom: 0.8rem; }
 }
+
+/* Homepage hero rotator */
+.hero-slides { position: relative; min-height: 22rem; }
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
+  pointer-events: none;
+}
+.hero-slide.is-active {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  position: relative;
+}
+.hero-dots { display: flex; gap: 0.5rem; margin-top: 1.75rem; }
+.hero-dot {
+  width: 2.25rem;
+  height: 0.3rem;
+  border: 0;
+  border-radius: 9999px;
+  background: #243044;
+  cursor: pointer;
+  padding: 0;
+}
+.hero-dot.is-active { background: #00d4ff; }
+@media (max-width: 640px) {
+  .hero-slides { min-height: 26rem; }
+}

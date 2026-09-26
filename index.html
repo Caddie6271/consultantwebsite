@@ -75,28 +75,64 @@
   </nav>
 
   <!-- Hero -->
-  <section class="relative min-h-screen flex items-center pt-16 overflow-hidden">
+  <section class="relative min-h-screen flex items-center pt-16 overflow-hidden" id="hero">
     <div class="absolute inset-0 bg-grid opacity-30"></div>
     <div class="absolute top-1/4 -right-32 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl"></div>
     <div class="absolute bottom-1/4 -left-32 w-80 h-80 bg-accent-teal/10 rounded-full blur-3xl"></div>
-    
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-      <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-800 border border-dark-600 text-sm text-accent-cyan mb-6 font-mono">
-          <span class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></span>
-          IT Infrastructure · Security · Leadership
-        </div>
-        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
-          Executive IT & Security Leadership<br />
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-teal">Without the Full-Time Cost</span>
-        </h1>
-        <p class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed">
-          Jason Martin Consulting delivers fractional <strong class="text-gray-200">vCISO</strong> and <strong class="text-gray-200">vCIO</strong> services, plus hands-on IT infrastructure and cybersecurity expertise. Strategic guidance that aligns technology with business outcomes.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4">
-          <a href="contact.html" class="btn-primary px-6 py-3 text-base">Schedule a Discovery Call</a>
-          <a href="https://store.jascmartin.com" class="btn-secondary px-6 py-3 text-base">Visit the Store</a>
-        </div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 w-full">
+      <div class="hero-slides max-w-3xl">
+        <article class="hero-slide is-active">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-800 border border-dark-600 text-sm text-accent-cyan mb-6 font-mono">
+            <span class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></span>
+            vCISO · vCIO · Leadership
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
+            Executive IT & Security Leadership<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-teal">Without the Full-Time Cost</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed">
+            Fractional <strong class="text-gray-200">vCISO</strong> and <strong class="text-gray-200">vCIO</strong> leadership. Strategy, roadmaps, and board-level reporting without hiring a full-time executive.
+          </p>
+        </article>
+
+        <article class="hero-slide">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-800 border border-dark-600 text-sm text-accent-cyan mb-6 font-mono">
+            <span class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></span>
+            Cybersecurity
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
+            Security work that<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-teal">reduces real risk</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed">
+            Assessments, control design, and a clear order of what to fix. Built for teams that need a stronger posture, not another unread report.
+          </p>
+        </article>
+
+        <article class="hero-slide">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-800 border border-dark-600 text-sm text-accent-cyan mb-6 font-mono">
+            <span class="w-2 h-2 rounded-full bg-accent-green animate-pulse"></span>
+            Web Development
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight mb-6">
+            Sites and portals<br />
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-teal">built to stay useful</span>
+          </h1>
+          <p class="text-lg sm:text-xl text-gray-400 mb-8 max-w-2xl leading-relaxed">
+            Marketing sites, client portals, and internal web tools. Fast, clear, and handed off so your team can keep them running.
+          </p>
+        </article>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 mt-2">
+        <a href="contact.html" class="btn-primary px-6 py-3 text-base">Schedule a Discovery Call</a>
+        <a href="services.html" class="btn-secondary px-6 py-3 text-base">See services</a>
+      </div>
+      <div class="hero-dots" role="tablist" aria-label="Featured services">
+        <button type="button" class="hero-dot is-active" aria-label="Leadership"></button>
+        <button type="button" class="hero-dot" aria-label="Cybersecurity"></button>
+        <button type="button" class="hero-dot" aria-label="Web development"></button>
       </div>
     </div>
   </section>

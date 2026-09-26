@@ -1,6 +1,29 @@
 // Jason Martin Consulting - Main JS + Work Integration
 
 document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.hero-dot');
+  if (slides.length) {
+    let i = 0;
+    let timer;
+    const show = (n) => {
+      i = (n + slides.length) % slides.length;
+      slides.forEach((s, idx) => s.classList.toggle('is-active', idx === i));
+      dots.forEach((d, idx) => d.classList.toggle('is-active', idx === i));
+    };
+    const start = () => {
+      clearInterval(timer);
+      timer = setInterval(() => show(i + 1), 6500);
+    };
+    dots.forEach((d, idx) => d.addEventListener('click', () => { show(idx); start(); }));
+    const hero = document.getElementById('hero');
+    if (hero) {
+      hero.addEventListener('mouseenter', () => clearInterval(timer));
+      hero.addEventListener('mouseleave', start);
+    }
+    start();
+  }
+
   // Mobile menu toggle
   const btn = document.getElementById('mobile-menu-btn');
   const menu = document.getElementById('mobile-menu');
